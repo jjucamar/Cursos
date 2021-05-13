@@ -58,4 +58,87 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+
+
+
+    //Relacion uno a uno
+
+public function profile(){
+    return $this->hasOne('App\Models\Profile');
+    }
+
+
+
+    //Relacion uno a muchos
+
+public function courses_dictated(){
+    return $this->hasMany('App\Models\Course');
+    }
+
+
+
+    //Relación uno a muchos
+public function reviews(){
+    return $this->hasMany('App\Models\Review');
+    }
+
+
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+        }
+
+
+
+public function reactions(){
+    return $this->hasMany('App\Models\Reaction');
+    }
+
+    
+
+    //Relacion muchos a muchos
+
+public function courses_enrolled(){
+    return $this->belongsToMany('App\Models\Course');
+    }
+
+
+    public function lessons(){
+        return $this->belongsToMany('App\Models\Lesson');
+        }
+
+
+        // Funcion para que se reconozca como polimórfica.
+public function commentable(){
+    return $this->morphTo();
+    }
+
+    //relacion uno a muchos inversa
+
+public function user(){
+    return $this->belongsTo('App\Models\User');
+    }
+
+
+//Relaciones uno a muchos polimórficas
+
+
+        
+
+// Funcion para que se reconozca como polimórfica.
+public function imageable(){
+    return $this->morphTo();
+    }
+
+    
+
+// Funcion para que se reconozca como polimórfica.
+public function reactionable(){
+return $this->morphTo();
+}
+
+
+//
+
 }
