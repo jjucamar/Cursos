@@ -9,6 +9,11 @@ class Course extends Model
 {
     use HasFactory;
 
+
+    // Asignación Masiva
+    protected $guarded = ['id', 'status'];
+
+
     const BORRADOR = 1;
     const REVISION = 2;
     const PUBLICADO = 3;

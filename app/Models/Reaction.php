@@ -13,6 +13,10 @@ class Reaction extends Model
     const DISLIKE = 2;
 
 
+    // Asignación Masiva
+    protected $guarded = ['id'];
+
+
     //Relacion uno a Muchos inversa
 
 public function user(){

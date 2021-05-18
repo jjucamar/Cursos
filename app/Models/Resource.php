@@ -9,6 +9,10 @@ class Resource extends Model
 {
     use HasFactory;
 
+    // Asignación Masiva
+    protected $guarded = ['id'];
+
+
     public function resourceable(){
         return $this->morphTo();
         }

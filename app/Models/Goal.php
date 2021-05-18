@@ -9,9 +9,12 @@ class Goal extends Model
 {
     use HasFactory;
 
-    //Relacion uno a muchos inversa
+    // Asignación Masiva
+    protected $guarded = ['id'];
 
-public function course(){
-    return $this->belongsTo('App\Models\Course');
+
+    //Relacion uno a muchos inversa
+    public function course(){
+        return $this->belongsTo('App\Models\Course');
     }
 }

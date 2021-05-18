@@ -9,9 +9,13 @@ class Level extends Model
 {
     use HasFactory;
 
-//Relacion uno a muchos
-public function courses(){
-    return $this->hasMany('App\Models\Course');
+    // Asignación Masiva
+    protected $guarded = ['id'];
+
+
+    //Relacion uno a muchos
+    public function courses(){
+        return $this->hasMany('App\Models\Course');
     }
     
 }

@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
+
+    // Asignación Masiva
+    protected $guarded = ['id'];
+
+
+
     //Relacion uno a uno inversa
 
 public function user(){
